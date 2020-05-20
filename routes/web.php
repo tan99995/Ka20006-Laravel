@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', 'PageController@home');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/login', 'PageController@login'); //displays the view for creating a login page
+Auth::routes();
 
-Route::get('/index', 'PageController@index');
-
-Route::get('/register', 'PageController@register'); //displays the view for creating the form
-
-Route::post('/register', 'PageController@store'); //stores a new user
-
-
+Route::get('/home', 'HomeController@index')->name('home');
