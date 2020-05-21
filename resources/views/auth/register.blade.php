@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title','Register')
+    
+
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -75,13 +80,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-6">
-                            <div class="col-md-20 offset-md-2">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group row ">
+                          <div class="col-md-7 " >
+                                <button type="submit" class="btn btn-primary" style = "display:flex;align-item:center;">
                                     {{ __('Register') }}
                                 </button>
-                            </div>
+                            </div>  
                         </div>
+                        
                     </form>
                 </div>
             </div>
