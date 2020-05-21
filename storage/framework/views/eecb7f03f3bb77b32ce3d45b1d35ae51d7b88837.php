@@ -53,15 +53,15 @@ endif; ?>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="institution" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Institution')); ?></label>
+                            <div class="form-group row">
+                            <label for="Institution" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Institution')); ?></label>
 
                             <div class="col-md-6">
-                                <input id="institution" type="text" class="form-control <?php if ($errors->has('institution')) :
+                                <input id="institution" type="password" class="form-control <?php if ($errors->has('institution')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('institution'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>" name="institution" value="<?php echo e(old('institution')); ?>" required autocomplete="name" autofocus>
+endif; ?>" name="institution" value="<?php echo e(old('institution')); ?>" required autocomplete="institution">
 
                                 <?php if ($errors->has('institution')) :
 if (isset($message)) { $messageCache = $message; }
@@ -73,6 +73,7 @@ $message = $errors->first('institution'); ?>
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
                             </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Password')); ?></label>

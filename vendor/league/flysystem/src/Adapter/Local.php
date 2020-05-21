@@ -5,10 +5,6 @@ namespace League\Flysystem\Adapter;
 use DirectoryIterator;
 use FilesystemIterator;
 use finfo as Finfo;
-<<<<<<< HEAD
-use League\Flysystem\AdapterInterface;
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 use League\Flysystem\Config;
 use League\Flysystem\Exception;
 use League\Flysystem\NotSupportedException;
@@ -42,11 +38,7 @@ class Local extends AbstractAdapter
         'dir' => [
             'public' => 0755,
             'private' => 0700,
-<<<<<<< HEAD
-        ]
-=======
         ],
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     ];
 
     /**
@@ -63,10 +55,7 @@ class Local extends AbstractAdapter
      * @var int
      */
     protected $writeFlags;
-<<<<<<< HEAD
-=======
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     /**
      * @var int
      */
@@ -110,13 +99,6 @@ class Local extends AbstractAdapter
     {
         if ( ! is_dir($root)) {
             $umask = umask(0);
-<<<<<<< HEAD
-            @mkdir($root, $this->permissionMap['dir']['public'], true);
-            umask($umask);
-
-            if ( ! is_dir($root)) {
-                throw new Exception(sprintf('Impossible to create the root directory "%s".', $root));
-=======
 
             if ( ! @mkdir($root, $this->permissionMap['dir']['public'], true)) {
                 $mkdirError = error_get_last();
@@ -128,7 +110,6 @@ class Local extends AbstractAdapter
             if ( ! is_dir($root)) {
                 $errorMessage = isset($mkdirError['message']) ? $mkdirError['message'] : '';
                 throw new Exception(sprintf('Impossible to create the root directory "%s". %s', $root, $errorMessage));
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             }
         }
     }
@@ -225,11 +206,7 @@ class Local extends AbstractAdapter
 
         $result = compact('type', 'path', 'size', 'contents');
 
-<<<<<<< HEAD
-        if ($mimetype = Util::guessMimeType($path, $contents)) {
-=======
         if ($mimetype = $config->get('mimetype') ?: Util::guessMimeType($path, $contents)) {
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             $result['mimetype'] = $mimetype;
         }
 
@@ -242,11 +219,7 @@ class Local extends AbstractAdapter
     public function read($path)
     {
         $location = $this->applyPathPrefix($path);
-<<<<<<< HEAD
-        $contents = file_get_contents($location);
-=======
         $contents = @file_get_contents($location);
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
         if ($contents === false) {
             return false;
@@ -314,11 +287,8 @@ class Local extends AbstractAdapter
             $result[] = $this->normalizeFileInfo($file);
         }
 
-<<<<<<< HEAD
-=======
         unset($iterator);
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         return array_filter($result);
     }
 
@@ -328,10 +298,7 @@ class Local extends AbstractAdapter
     public function getMetadata($path)
     {
         $location = $this->applyPathPrefix($path);
-<<<<<<< HEAD
-=======
         clearstatcache(false, $location);
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         $info = new SplFileInfo($location);
 
         return $this->normalizeFileInfo($info);
@@ -354,11 +321,7 @@ class Local extends AbstractAdapter
         $finfo = new Finfo(FILEINFO_MIME_TYPE);
         $mimetype = $finfo->file($location);
 
-<<<<<<< HEAD
-        if (in_array($mimetype, ['application/octet-stream', 'inode/x-empty'])) {
-=======
         if (in_array($mimetype, ['application/octet-stream', 'inode/x-empty', 'application/x-empty'])) {
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             $mimetype = Util\MimeType::detectByFilename($location);
         }
 
@@ -381,9 +344,6 @@ class Local extends AbstractAdapter
         $location = $this->applyPathPrefix($path);
         clearstatcache(false, $location);
         $permissions = octdec(substr(sprintf('%o', fileperms($location)), -4));
-<<<<<<< HEAD
-        $visibility = $permissions & 0044 ? AdapterInterface::VISIBILITY_PUBLIC : AdapterInterface::VISIBILITY_PRIVATE;
-=======
         $type = is_dir($location) ? 'dir' : 'file';
 
         foreach ($this->permissionMap[$type] as $visibility => $visibilityPermissions) {
@@ -393,7 +353,6 @@ class Local extends AbstractAdapter
         }
 
         $visibility = substr(sprintf('%o', fileperms($location)), -4);
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
         return compact('path', 'visibility');
     }
@@ -422,13 +381,6 @@ class Local extends AbstractAdapter
         $location = $this->applyPathPrefix($dirname);
         $umask = umask(0);
         $visibility = $config->get('visibility', 'public');
-<<<<<<< HEAD
-
-        if ( ! is_dir($location) && ! mkdir($location, $this->permissionMap['dir'][$visibility], true)) {
-            $return = false;
-        } else {
-            $return = ['path' => $dirname, 'type' => 'dir'];
-=======
         $return = ['path' => $dirname, 'type' => 'dir'];
 
         if ( ! is_dir($location)) {
@@ -436,7 +388,6 @@ class Local extends AbstractAdapter
                 || false === is_dir($location)) {
                 $return = false;
             }
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         }
 
         umask($umask);
@@ -463,11 +414,8 @@ class Local extends AbstractAdapter
             $this->deleteFileInfoObject($file);
         }
 
-<<<<<<< HEAD
-=======
         unset($contents);
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         return rmdir($location);
     }
 

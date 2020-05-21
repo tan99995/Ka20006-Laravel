@@ -3,10 +3,6 @@
 namespace League\Flysystem;
 
 use InvalidArgumentException;
-<<<<<<< HEAD
-use League\Flysystem\FilesystemNotFoundException;
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 use League\Flysystem\Plugin\PluggableTrait;
 use League\Flysystem\Plugin\PluginNotFoundException;
 
@@ -17,49 +13,17 @@ use League\Flysystem\Plugin\PluginNotFoundException;
  *
  * @method AdapterInterface getAdapter($prefix)
  * @method Config getConfig($prefix)
-<<<<<<< HEAD
- * @method bool has($path)
- * @method bool write($path, $contents, array $config = [])
- * @method bool writeStream($path, $resource, array $config = [])
- * @method bool put($path, $contents, $config = [])
- * @method bool putStream($path, $contents, $config = [])
- * @method string readAndDelete($path)
- * @method bool update($path, $contents, $config = [])
- * @method bool updateStream($path, $resource, $config = [])
- * @method string|false read($path)
- * @method resource|false readStream($path)
- * @method bool rename($path, $newpath)
- * @method bool delete($path)
- * @method bool deleteDir($dirname)
- * @method bool createDir($dirname, $config = [])
  * @method array listFiles($directory = '', $recursive = false)
  * @method array listPaths($directory = '', $recursive = false)
  * @method array getWithMetadata($path, array $metadata)
- * @method string|false getMimetype($path)
- * @method int|false getTimestamp($path)
- * @method string|false getVisibility($path)
- * @method int|false getSize($path);
- * @method bool setVisibility($path, $visibility)
- * @method array|false getMetadata($path)
- * @method Handler get($path, Handler $handler = null)
-=======
- * @method array listFiles($directory = '', $recursive = false)
- * @method array listPaths($directory = '', $recursive = false)
- * @method array getWithMetadata($path, array $metadata)
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
  * @method Filesystem flushCache()
  * @method void assertPresent($path)
  * @method void assertAbsent($path)
  * @method Filesystem addPlugin(PluginInterface $plugin)
-<<<<<<< HEAD
- */
-class MountManager
-=======
  *
  * @deprecated This functionality will be removed in 2.0
  */
 class MountManager implements FilesystemInterface
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 {
     use PluggableTrait;
 
@@ -334,8 +298,6 @@ class MountManager implements FilesystemInterface
 
         return explode('://', $path, 2);
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Check whether a file exists.
@@ -685,5 +647,4 @@ class MountManager implements FilesystemInterface
 
         return $this->getFilesystem($prefix)->get($path);
     }
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 }

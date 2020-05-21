@@ -72,16 +72,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
     protected $systemType;
 
     /**
-<<<<<<< HEAD
-     * @var bool
-     */
-    protected $alternativeRecursion = false;
-
-    /**
-     * @var SafeStorage
-     */
-    protected $safeStorage;
-=======
      * @var SafeStorage
      */
     protected $safeStorage;
@@ -92,7 +82,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
      * @var bool
      */
     protected $enableTimestampsOnUnixListings = false;
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
     /**
      * Constructor.
@@ -328,8 +317,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
     }
 
     /**
-<<<<<<< HEAD
-=======
      * True to enable timestamps for FTP servers that return unix-style listings.
      *
      * @param bool $bool
@@ -344,7 +331,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
     }
 
     /**
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      * @inheritdoc
      */
     public function listContents($directory = '', $recursive = false)
@@ -424,8 +410,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
     /**
      * Normalize a Unix file entry.
      *
-<<<<<<< HEAD
-=======
      * Given $item contains:
      *    '-rw-r--r--   1 ftp      ftp           409 Aug 19 09:01 file1.txt'
      *
@@ -438,7 +422,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
      *   'timestamp' => 1566205260
      * ]
      *
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      * @param string $item
      * @param string $base
      *
@@ -452,11 +435,7 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
             throw new RuntimeException("Metadata can't be parsed from item '$item' , not enough parts.");
         }
 
-<<<<<<< HEAD
-        list($permissions, /* $number */, /* $owner */, /* $group */, $size, /* $month */, /* $day */, /* $time*/, $name) = explode(' ', $item, 9);
-=======
         list($permissions, /* $number */, /* $owner */, /* $group */, $size, $month, $day, $timeOrYear, $name) = explode(' ', $item, 9);
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         $type = $this->detectType($permissions);
         $path = $base === '' ? $name : $base . $this->separator . $name;
 
@@ -468,9 +447,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
         $visibility = $permissions & 0044 ? AdapterInterface::VISIBILITY_PUBLIC : AdapterInterface::VISIBILITY_PRIVATE;
         $size = (int) $size;
 
-<<<<<<< HEAD
-        return compact('type', 'path', 'visibility', 'size');
-=======
         $result = compact('type', 'path', 'visibility', 'size');
         if ($this->enableTimestampsOnUnixListings) {
             $timestamp = $this->normalizeUnixTimestamp($month, $day, $timeOrYear);
@@ -509,7 +485,6 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
         $dateTime = DateTime::createFromFormat('Y-M-j-G:i:s', "{$year}-{$month}-{$day}-{$hour}:{$minute}:{$seconds}");
 
         return $dateTime->getTimestamp();
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     }
 
     /**
@@ -582,13 +557,10 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
      */
     protected function normalizePermissions($permissions)
     {
-<<<<<<< HEAD
-=======
         if (is_numeric($permissions)) {
             return ((int) $permissions) & 0777;
         }
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         // remove the type identifier
         $permissions = substr($permissions, 1);
 

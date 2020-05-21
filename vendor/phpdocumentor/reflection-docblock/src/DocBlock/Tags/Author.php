@@ -1,36 +1,18 @@
 <?php
-<<<<<<< HEAD
-
-declare(strict_types=1);
-
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
-<<<<<<< HEAD
- * @link http://phpdoc.org
-=======
  * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @link      http://phpdoc.org
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
  */
 
 namespace phpDocumentor\Reflection\DocBlock\Tags;
 
-<<<<<<< HEAD
-use InvalidArgumentException;
-use function filter_var;
-use function preg_match;
-use function trim;
-use const FILTER_VALIDATE_EMAIL;
-=======
 use Webmozart\Assert\Assert;
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 /**
  * Reflection class for an {@}author tag in a Docblock.
@@ -41,20 +23,6 @@ final class Author extends BaseTag implements Factory\StaticMethod
     protected $name = 'author';
 
     /** @var string The name of the author */
-<<<<<<< HEAD
-    private $authorName;
-
-    /** @var string The email of the author */
-    private $authorEmail;
-
-    /**
-     * Initializes this tag with the author name and e-mail.
-     */
-    public function __construct(string $authorName, string $authorEmail)
-    {
-        if ($authorEmail && !filter_var($authorEmail, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException('The author tag does not have a valid e-mail address');
-=======
     private $authorName = '';
 
     /** @var string The email of the author */
@@ -72,7 +40,6 @@ final class Author extends BaseTag implements Factory\StaticMethod
         Assert::string($authorEmail);
         if ($authorEmail && !filter_var($authorEmail, FILTER_VALIDATE_EMAIL)) {
             throw new \InvalidArgumentException('The author tag does not have a valid e-mail address');
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         }
 
         $this->authorName  = $authorName;
@@ -84,11 +51,7 @@ final class Author extends BaseTag implements Factory\StaticMethod
      *
      * @return string The author's name.
      */
-<<<<<<< HEAD
-    public function getAuthorName() : string
-=======
     public function getAuthorName()
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     {
         return $this->authorName;
     }
@@ -98,39 +61,23 @@ final class Author extends BaseTag implements Factory\StaticMethod
      *
      * @return string The author's email.
      */
-<<<<<<< HEAD
-    public function getEmail() : string
-=======
     public function getEmail()
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     {
         return $this->authorEmail;
     }
 
     /**
      * Returns this tag in string form.
-<<<<<<< HEAD
-     */
-    public function __toString() : string
-    {
-        return $this->authorName . ($this->authorEmail !== '' ? ' <' . $this->authorEmail . '>' : '');
-=======
      *
      * @return string
      */
     public function __toString()
     {
         return $this->authorName . (strlen($this->authorEmail) ? ' <' . $this->authorEmail . '>' : '');
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     }
 
     /**
      * Attempts to create a new Author object based on †he tag body.
-<<<<<<< HEAD
-     */
-    public static function create(string $body) : ?self
-    {
-=======
      *
      * @param string $body
      *
@@ -140,18 +87,13 @@ final class Author extends BaseTag implements Factory\StaticMethod
     {
         Assert::string($body);
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         $splitTagContent = preg_match('/^([^\<]*)(?:\<([^\>]*)\>)?$/u', $body, $matches);
         if (!$splitTagContent) {
             return null;
         }
 
         $authorName = trim($matches[1]);
-<<<<<<< HEAD
-        $email      = isset($matches[2]) ? trim($matches[2]) : '';
-=======
         $email = isset($matches[2]) ? trim($matches[2]) : '';
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
         return new static($authorName, $email);
     }

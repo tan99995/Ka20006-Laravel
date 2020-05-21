@@ -1,12 +1,4 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<<<<<<< HEAD
-![](https://github.com/phpdocumentor/typeresolver/workflows/Qa%20workflow/badge.svg?branch=master)
-[![Coveralls Coverage](https://img.shields.io/coveralls/github/phpDocumentor/TypeResolver.svg)](https://coveralls.io/github/phpDocumentor/TypeResolver?branch=master)
-[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/phpDocumentor/TypeResolver.svg)](https://scrutinizer-ci.com/g/phpDocumentor/TypeResolver/?branch=master)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/phpDocumentor/TypeResolver.svg)](https://scrutinizer-ci.com/g/phpDocumentor/TypeResolver/?branch=master)
-![Packagist Version](https://img.shields.io/packagist/v/phpdocumentor/type-resolver?label=Packagist%20stable)
-![Packagist Version](https://img.shields.io/packagist/vpre/phpdocumentor/type-resolver?label=Packagist%20unstable)
-=======
 [![Travis Status](https://img.shields.io/travis/phpDocumentor/TypeResolver.svg?label=Linux)](https://travis-ci.org/phpDocumentor/TypeResolver)
 [![Appveyor Status](https://img.shields.io/appveyor/ci/phpDocumentor/TypeResolver.svg?label=Windows)](https://ci.appveyor.com/project/phpDocumentor/TypeResolver/branch/master)
 [![Coveralls Coverage](https://img.shields.io/coveralls/github/phpDocumentor/TypeResolver.svg)](https://coveralls.io/github/phpDocumentor/TypeResolver?branch=master)
@@ -15,7 +7,6 @@
 [![Stable Version](https://img.shields.io/packagist/v/phpDocumentor/Type-Resolver.svg)](https://packagist.org/packages/phpDocumentor/TypeResolver)
 [![Unstable Version](https://img.shields.io/packagist/vpre/phpDocumentor/Type-Resolver.svg)](https://packagist.org/packages/phpDocumentor/TypeResolver)
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 TypeResolver and FqsenResolver
 ==============================

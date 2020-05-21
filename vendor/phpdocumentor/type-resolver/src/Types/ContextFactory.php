@@ -23,16 +23,6 @@ use ReflectionProperty;
 use Reflector;
 use RuntimeException;
 use UnexpectedValueException;
-<<<<<<< HEAD
-use function array_merge;
-use function file_exists;
-use function file_get_contents;
-use function get_class;
-use function is_string;
-use function token_get_all;
-use function trim;
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 use const T_AS;
 use const T_CLASS;
 use const T_CURLY_OPEN;
@@ -41,8 +31,6 @@ use const T_NAMESPACE;
 use const T_NS_SEPARATOR;
 use const T_STRING;
 use const T_USE;
-<<<<<<< HEAD
-=======
 use function array_merge;
 use function file_exists;
 use function file_get_contents;
@@ -50,7 +38,6 @@ use function get_class;
 use function is_string;
 use function token_get_all;
 use function trim;
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 /**
  * Convenience class to create a Context for DocBlocks when not using the Reflection Component of phpDocumentor.
@@ -185,19 +172,11 @@ final class ContextFactory
 
                         $tokens->next();
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                     break;
                 case T_USE:
                     if ($currentNamespace === $namespace) {
                         $useStatements = array_merge($useStatements, $this->parseUseStatement($tokens));
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                     break;
             }
 
@@ -241,13 +220,6 @@ final class ContextFactory
             if ($tokens->current()[0] === self::T_LITERAL_END_OF_USE) {
                 return $uses;
             }
-<<<<<<< HEAD
-
-            if ($tokens->current() === false) {
-                break;
-            }
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         }
 
         return $uses;
@@ -306,10 +278,6 @@ final class ContextFactory
                         default:
                             break;
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                     break;
                 case 'start-alias':
                     switch ($tokenId) {
@@ -323,10 +291,6 @@ final class ContextFactory
                         default:
                             break;
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                     break;
                 case 'grouped':
                     switch ($tokenId) {
@@ -350,10 +314,6 @@ final class ContextFactory
                         default:
                             break;
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                     break;
                 case 'grouped-alias':
                     switch ($tokenId) {

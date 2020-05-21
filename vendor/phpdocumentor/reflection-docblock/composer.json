@@ -1,50 +1,12 @@
 {
-<<<<<<< HEAD
-    "name": "phpdocumentor/reflection-docblock",
-    "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-    "type": "library",
-=======
     "name":    "phpdocumentor/reflection-docblock",
     "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
     "type":    "library",
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     "license": "MIT",
     "authors": [
         {
             "name": "Mike van Riel",
             "email": "me@mikevanriel.com"
-<<<<<<< HEAD
-        },
-        {
-            "name": "Jaap van Otterdijk",
-            "email": "account@ijaap.nl"
-        }
-    ],
-    "require": {
-        "php": "^7.2",
-        "phpdocumentor/type-resolver": "^1.0",
-        "webmozart/assert": "^1",
-        "phpdocumentor/reflection-common": "^2.0",
-        "ext-filter": "^7.1"
-    },
-    "require-dev": {
-        "mockery/mockery": "^1",
-        "doctrine/instantiator": "^1"
-    },
-    "autoload": {
-        "psr-4": {
-            "phpDocumentor\\Reflection\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "phpDocumentor\\Reflection\\": "tests/unit"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "5.x-dev"
-=======
         }
     ],
     "require": {
@@ -68,7 +30,6 @@
     "extra": {
         "branch-alias": {
             "dev-master": "4.x-dev"
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         }
     }
 }
