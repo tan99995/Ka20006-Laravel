@@ -43,7 +43,7 @@
                             <label for="institution" class="col-md-4 col-form-label text-md-right">{{ __('Institution') }}</label>
 
                             <div class="col-md-6">
-                                <input id="institution" type="text" class="form-control @error('institution') is-invalid @enderror" name="institution" value="{{ old('institution') }}" required autocomplete="name" autofocus>
+                                <input id="institution" type="institution" class="form-control @error('institution') is-invalid @enderror" name="institution" value="{{ old('institution') }}" required autocomplete="Institution" >
 
                                 @error('institution')
                                     <span class="invalid-feedback" role="alert">
