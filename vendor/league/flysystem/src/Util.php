@@ -137,12 +137,8 @@ class Util
      *
      * @return string $path
      */
-<<<<<<< HEAD
-    protected static function removeFunkyWhiteSpace($path) {
-=======
     protected static function removeFunkyWhiteSpace($path)
     {
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         // We do this check in a loop, since removing invalid unicode characters
         // can lead to new characters being created.
         while (preg_match('#\p{C}+|^\./#u', $path)) {
@@ -180,11 +176,7 @@ class Util
     /**
      * Guess MIME Type based on the path of the file and it's content.
      *
-<<<<<<< HEAD
-     * @param string $path
-=======
      * @param string          $path
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      * @param string|resource $content
      *
      * @return string|null MIME Type or NULL if no extension detected
@@ -275,23 +267,16 @@ class Util
      *
      * @param resource $resource
      *
-<<<<<<< HEAD
-     * @return int stream size
-=======
      * @return int|null stream size
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      */
     public static function getStreamSize($resource)
     {
         $stat = fstat($resource);
 
-<<<<<<< HEAD
-=======
         if ( ! is_array($stat) || ! isset($stat['size'])) {
             return null;
         }
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         return $stat['size'];
     }
 
@@ -310,21 +295,13 @@ class Util
             $listedDirectories[] = $object['path'];
         }
 
-<<<<<<< HEAD
-        if (empty($object['dirname'])) {
-=======
         if ( ! isset($object['dirname']) || trim($object['dirname']) === '') {
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             return [$directories, $listedDirectories];
         }
 
         $parent = $object['dirname'];
 
-<<<<<<< HEAD
-        while ( ! empty($parent) && ! in_array($parent, $directories)) {
-=======
         while (isset($parent) && trim($parent) !== '' && ! in_array($parent, $directories)) {
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             $directories[] = $parent;
             $parent = static::dirname($parent);
         }

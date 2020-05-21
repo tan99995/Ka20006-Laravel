@@ -20,11 +20,7 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
-        "php": "^7.2.5"
-=======
         "php": "^7.1.3"
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\CssSelector\\": "" },
@@ -35,11 +31,7 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
-            "dev-master": "5.0-dev"
-=======
             "dev-master": "4.4-dev"
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         }
     }
 }

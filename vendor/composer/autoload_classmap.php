@@ -14,13 +14,6 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
-<<<<<<< HEAD
-    'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
-    'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
-    'App\\Http\\Controllers\\PageController' => $baseDir . '/app/Http/Controllers/PageController.php',
-    'App\\Http\\Controllers\\RegisterController' => $baseDir . '/app/Http/Controllers/RegisterController.php',
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -29,19 +22,11 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
-<<<<<<< HEAD
-    'App\\Logintable' => $baseDir . '/app/Logintable.php',
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
-<<<<<<< HEAD
-    'App\\Registrationtable' => $baseDir . '/app/Registrationtable.php',
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'App\\User' => $baseDir . '/app/User.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
     'BeyondCode\\DumpServer\\DumpServerServiceProvider' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
@@ -151,50 +136,6 @@ return array(
     'DeepCopy\\TypeMatcher\\TypeMatcher' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
     'Doctrine\\Common\\Inflector\\Inflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
     'Doctrine\\Common\\Lexer\\AbstractLexer' => $vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
-<<<<<<< HEAD
-    'Doctrine\\Inflector\\CachedWordInflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
-    'Doctrine\\Inflector\\GenericLanguageInflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
-    'Doctrine\\Inflector\\Inflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Inflector.php',
-    'Doctrine\\Inflector\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/InflectorFactory.php',
-    'Doctrine\\Inflector\\Language' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Language.php',
-    'Doctrine\\Inflector\\LanguageInflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/LanguageInflectorFactory.php',
-    'Doctrine\\Inflector\\NoopWordInflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/NoopWordInflector.php',
-    'Doctrine\\Inflector\\Rules\\English\\Inflectible' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Inflectible.php',
-    'Doctrine\\Inflector\\Rules\\English\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php',
-    'Doctrine\\Inflector\\Rules\\English\\Rules' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Rules.php',
-    'Doctrine\\Inflector\\Rules\\English\\Uninflected' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Uninflected.php',
-    'Doctrine\\Inflector\\Rules\\French\\Inflectible' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Inflectible.php',
-    'Doctrine\\Inflector\\Rules\\French\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/InflectorFactory.php',
-    'Doctrine\\Inflector\\Rules\\French\\Rules' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Rules.php',
-    'Doctrine\\Inflector\\Rules\\French\\Uninflected' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Uninflected.php',
-    'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\Inflectible' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Inflectible.php',
-    'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/InflectorFactory.php',
-    'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\Rules' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Rules.php',
-    'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\Uninflected' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Uninflected.php',
-    'Doctrine\\Inflector\\Rules\\Pattern' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Pattern.php',
-    'Doctrine\\Inflector\\Rules\\Patterns' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Patterns.php',
-    'Doctrine\\Inflector\\Rules\\Portuguese\\Inflectible' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Inflectible.php',
-    'Doctrine\\Inflector\\Rules\\Portuguese\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/InflectorFactory.php',
-    'Doctrine\\Inflector\\Rules\\Portuguese\\Rules' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Rules.php',
-    'Doctrine\\Inflector\\Rules\\Portuguese\\Uninflected' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Uninflected.php',
-    'Doctrine\\Inflector\\Rules\\Ruleset' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Ruleset.php',
-    'Doctrine\\Inflector\\Rules\\Spanish\\Inflectible' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Inflectible.php',
-    'Doctrine\\Inflector\\Rules\\Spanish\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/InflectorFactory.php',
-    'Doctrine\\Inflector\\Rules\\Spanish\\Rules' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Rules.php',
-    'Doctrine\\Inflector\\Rules\\Spanish\\Uninflected' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Uninflected.php',
-    'Doctrine\\Inflector\\Rules\\Substitution' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Substitution.php',
-    'Doctrine\\Inflector\\Rules\\Substitutions' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Substitutions.php',
-    'Doctrine\\Inflector\\Rules\\Transformation' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Transformation.php',
-    'Doctrine\\Inflector\\Rules\\Transformations' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Transformations.php',
-    'Doctrine\\Inflector\\Rules\\Turkish\\Inflectible' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Inflectible.php',
-    'Doctrine\\Inflector\\Rules\\Turkish\\InflectorFactory' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/InflectorFactory.php',
-    'Doctrine\\Inflector\\Rules\\Turkish\\Rules' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Rules.php',
-    'Doctrine\\Inflector\\Rules\\Turkish\\Uninflected' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Uninflected.php',
-    'Doctrine\\Inflector\\Rules\\Word' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Word.php',
-    'Doctrine\\Inflector\\RulesetInflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/RulesetInflector.php',
-    'Doctrine\\Inflector\\WordInflector' => $vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector/WordInflector.php',
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
     'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
     'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
@@ -1662,28 +1603,19 @@ return array(
     'League\\Flysystem\\Adapter\\SynologyFtp' => $vendorDir . '/league/flysystem/src/Adapter/SynologyFtp.php',
     'League\\Flysystem\\Config' => $vendorDir . '/league/flysystem/src/Config.php',
     'League\\Flysystem\\ConfigAwareTrait' => $vendorDir . '/league/flysystem/src/ConfigAwareTrait.php',
-<<<<<<< HEAD
-=======
     'League\\Flysystem\\ConnectionErrorException' => $vendorDir . '/league/flysystem/src/ConnectionErrorException.php',
     'League\\Flysystem\\ConnectionRuntimeException' => $vendorDir . '/league/flysystem/src/ConnectionRuntimeException.php',
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'League\\Flysystem\\Directory' => $vendorDir . '/league/flysystem/src/Directory.php',
     'League\\Flysystem\\Exception' => $vendorDir . '/league/flysystem/src/Exception.php',
     'League\\Flysystem\\File' => $vendorDir . '/league/flysystem/src/File.php',
     'League\\Flysystem\\FileExistsException' => $vendorDir . '/league/flysystem/src/FileExistsException.php',
     'League\\Flysystem\\FileNotFoundException' => $vendorDir . '/league/flysystem/src/FileNotFoundException.php',
     'League\\Flysystem\\Filesystem' => $vendorDir . '/league/flysystem/src/Filesystem.php',
-<<<<<<< HEAD
-    'League\\Flysystem\\FilesystemInterface' => $vendorDir . '/league/flysystem/src/FilesystemInterface.php',
-    'League\\Flysystem\\FilesystemNotFoundException' => $vendorDir . '/league/flysystem/src/FilesystemNotFoundException.php',
-    'League\\Flysystem\\Handler' => $vendorDir . '/league/flysystem/src/Handler.php',
-=======
     'League\\Flysystem\\FilesystemException' => $vendorDir . '/league/flysystem/src/FilesystemException.php',
     'League\\Flysystem\\FilesystemInterface' => $vendorDir . '/league/flysystem/src/FilesystemInterface.php',
     'League\\Flysystem\\FilesystemNotFoundException' => $vendorDir . '/league/flysystem/src/FilesystemNotFoundException.php',
     'League\\Flysystem\\Handler' => $vendorDir . '/league/flysystem/src/Handler.php',
     'League\\Flysystem\\InvalidRootException' => $vendorDir . '/league/flysystem/src/InvalidRootException.php',
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'League\\Flysystem\\MountManager' => $vendorDir . '/league/flysystem/src/MountManager.php',
     'League\\Flysystem\\NotSupportedException' => $vendorDir . '/league/flysystem/src/NotSupportedException.php',
     'League\\Flysystem\\PluginInterface' => $vendorDir . '/league/flysystem/src/PluginInterface.php',
@@ -3752,18 +3684,11 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Deprecated' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Deprecated.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Example' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\StaticMethod' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/StaticMethod.php',
-<<<<<<< HEAD
-=======
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\Strategy' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/Strategy.php',
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\AlignFormatter' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/AlignFormatter.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\PassthroughFormatter' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/PassthroughFormatter.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Generic' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Generic.php',
-<<<<<<< HEAD
-    'phpDocumentor\\Reflection\\DocBlock\\Tags\\InvalidTag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php',
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Link' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Link.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Method' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Param' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php',
@@ -3795,10 +3720,6 @@ return array(
     'phpDocumentor\\Reflection\\Types\\Array_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Array_.php',
     'phpDocumentor\\Reflection\\Types\\Boolean' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Boolean.php',
     'phpDocumentor\\Reflection\\Types\\Callable_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Callable_.php',
-<<<<<<< HEAD
-    'phpDocumentor\\Reflection\\Types\\ClassString' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/ClassString.php',
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     'phpDocumentor\\Reflection\\Types\\Collection' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Collection.php',
     'phpDocumentor\\Reflection\\Types\\Compound' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Compound.php',
     'phpDocumentor\\Reflection\\Types\\Context' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Context.php',

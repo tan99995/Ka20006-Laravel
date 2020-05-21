@@ -29,10 +29,7 @@ abstract class AbstractAdapter implements AdapterInterface
 
         if ($prefix === '') {
             $this->pathPrefix = null;
-<<<<<<< HEAD
-=======
 
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             return;
         }
 

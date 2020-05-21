@@ -14,10 +14,7 @@ declare(strict_types=1);
 namespace phpDocumentor\Reflection\Types;
 
 use ArrayIterator;
-<<<<<<< HEAD
-=======
 use InvalidArgumentException;
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 use IteratorAggregate;
 use phpDocumentor\Reflection\Type;
 use function implode;
@@ -32,29 +29,18 @@ use function implode;
 final class Compound implements Type, IteratorAggregate
 {
     /** @var Type[] */
-<<<<<<< HEAD
-    private $types = [];
-=======
     private $types;
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
     /**
      * Initializes a compound type (i.e. `string|int`) and tests if the provided types all implement the Type interface.
      *
      * @param Type[] $types
-<<<<<<< HEAD
-=======
      *
      * @throws InvalidArgumentException When types are not all instance of Type.
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      */
     public function __construct(array $types)
     {
         foreach ($types as $type) {
-<<<<<<< HEAD
-            $this->add($type);
-        }
-=======
             /** @psalm-suppress RedundantConditionGivenDocblockType */
             if (!$type instanceof Type) {
                 throw new InvalidArgumentException('A compound type can only have other types as elements');
@@ -62,7 +48,6 @@ final class Compound implements Type, IteratorAggregate
         }
 
         $this->types = $types;
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     }
 
     /**
@@ -86,24 +71,6 @@ final class Compound implements Type, IteratorAggregate
     }
 
     /**
-<<<<<<< HEAD
-     * Tests if this compound type contains the given type.
-     */
-    public function contains(Type $type) : bool
-    {
-        foreach ($this->types as $typePart) {
-            // if the type is duplicate; do not add it
-            if ((string) $typePart === (string) $type) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      * Returns a rendered output of the Type as it would be used in a DocBlock.
      */
     public function __toString() : string
@@ -118,17 +85,4 @@ final class Compound implements Type, IteratorAggregate
     {
         return new ArrayIterator($this->types);
     }
-<<<<<<< HEAD
-
-    private function add(Type $type) : void
-    {
-        // if the type is duplicate; do not add it
-        if ($this->contains($type)) {
-            return;
-        }
-
-        $this->types[] = $type;
-    }
-=======
->>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 }
