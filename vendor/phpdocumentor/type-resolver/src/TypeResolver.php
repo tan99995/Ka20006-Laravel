@@ -16,7 +16,10 @@ namespace phpDocumentor\Reflection;
 use ArrayIterator;
 use InvalidArgumentException;
 use phpDocumentor\Reflection\Types\Array_;
+<<<<<<< HEAD
 use phpDocumentor\Reflection\Types\ClassString;
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 use phpDocumentor\Reflection\Types\Collection;
 use phpDocumentor\Reflection\Types\Compound;
 use phpDocumentor\Reflection\Types\Context;
@@ -26,6 +29,11 @@ use phpDocumentor\Reflection\Types\Nullable;
 use phpDocumentor\Reflection\Types\Object_;
 use phpDocumentor\Reflection\Types\String_;
 use RuntimeException;
+<<<<<<< HEAD
+=======
+use const PREG_SPLIT_DELIM_CAPTURE;
+use const PREG_SPLIT_NO_EMPTY;
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 use function array_keys;
 use function array_pop;
 use function class_exists;
@@ -38,8 +46,11 @@ use function strpos;
 use function strtolower;
 use function substr;
 use function trim;
+<<<<<<< HEAD
 use const PREG_SPLIT_DELIM_CAPTURE;
 use const PREG_SPLIT_NO_EMPTY;
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 final class TypeResolver
 {
@@ -67,7 +78,10 @@ final class TypeResolver
      */
     private $keywords = [
         'string' => Types\String_::class,
+<<<<<<< HEAD
         'class-string' => Types\ClassString::class,
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         'int' => Types\Integer::class,
         'integer' => Types\Integer::class,
         'bool' => Types\Boolean::class,
@@ -223,11 +237,15 @@ final class TypeResolver
 
                 $classType = array_pop($types);
                 if ($classType !== null) {
+<<<<<<< HEAD
                     if ((string) $classType === 'class-string') {
                         $types[] = $this->resolveClassString($tokens, $context);
                     } else {
                         $types[] = $this->resolveCollection($tokens, $classType, $context);
                     }
+=======
+                    $types[] = $this->resolveCollection($tokens, $classType, $context);
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                 }
 
                 $tokens->next();
@@ -295,7 +313,10 @@ final class TypeResolver
                 return $this->resolveTypedObject($type);
             case $this->isPartialStructuralElementName($type):
                 return $this->resolveTypedObject($type, $context);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             // @codeCoverageIgnoreStart
             default:
                 // I haven't got the foggiest how the logic would come here but added this as a defense.
@@ -309,8 +330,11 @@ final class TypeResolver
 
     /**
      * Adds a keyword to the list of Keywords and associates it with a specific Value Object.
+<<<<<<< HEAD
      *
      * @psalm-param class-string<Type> $typeClassName
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
      */
     public function addKeyword(string $keyword, string $typeClassName) : void
     {
@@ -382,7 +406,10 @@ final class TypeResolver
     private function resolveKeyword(string $type) : Type
     {
         $className = $this->keywords[strtolower($type)];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         return new $className();
     }
 
@@ -395,6 +422,7 @@ final class TypeResolver
     }
 
     /**
+<<<<<<< HEAD
      * Resolves class string
      */
     private function resolveClassString(ArrayIterator $tokens, Context $context) : Type
@@ -436,6 +464,18 @@ final class TypeResolver
 
         // allow only "array", "iterable" or class name before "<"
         if (!$isArray && !$isIterable
+=======
+     * Resolves the collection values and keys
+     *
+     * @return Array_|Collection
+     */
+    private function resolveCollection(ArrayIterator $tokens, Type $classType, Context $context) : Type
+    {
+        $isArray = ((string) $classType === 'array');
+
+        // allow only "array" or class name before "<"
+        if (!$isArray
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             && (!$classType instanceof Object_ || $classType->getFqsen() === null)) {
             throw new RuntimeException(
                 $classType . ' is not a collection'
@@ -496,10 +536,13 @@ final class TypeResolver
             return new Array_($valueType, $keyType);
         }
 
+<<<<<<< HEAD
         if ($isIterable) {
             return new Iterable_($valueType, $keyType);
         }
 
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
         /** @psalm-suppress RedundantCondition */
         if ($classType instanceof Object_) {
             return $this->makeCollectionFromObject($classType, $valueType, $keyType);

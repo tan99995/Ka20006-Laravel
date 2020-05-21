@@ -1,13 +1,21 @@
 <?php
+<<<<<<< HEAD
 
 declare(strict_types=1);
 
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+<<<<<<< HEAD
+=======
+ * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
  * @link      http://phpdoc.org
  */
 
@@ -19,6 +27,7 @@ use phpDocumentor\Reflection\Type;
 use phpDocumentor\Reflection\TypeResolver;
 use phpDocumentor\Reflection\Types\Context as TypeContext;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 use function array_shift;
 use function array_unshift;
 use function implode;
@@ -26,12 +35,15 @@ use function preg_split;
 use function strpos;
 use function substr;
 use const PREG_SPLIT_DELIM_CAPTURE;
+=======
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 /**
  * Reflection class for the {@}param tag in a Docblock.
  */
 final class Param extends TagWithType implements Factory\StaticMethod
 {
+<<<<<<< HEAD
     /** @var string|null */
     private $variableName;
 
@@ -71,6 +83,52 @@ final class Param extends TagWithType implements Factory\StaticMethod
 
         // if the first item that is encountered is not a variable; it is a type
         if ($firstPart && $firstPart[0] !== '$') {
+=======
+    /** @var string */
+    private $variableName = '';
+
+    /** @var bool determines whether this is a variadic argument */
+    private $isVariadic = false;
+
+    /**
+     * @param string $variableName
+     * @param Type $type
+     * @param bool $isVariadic
+     * @param Description $description
+     */
+    public function __construct($variableName, Type $type = null, $isVariadic = false, Description $description = null)
+    {
+        Assert::string($variableName);
+        Assert::boolean($isVariadic);
+
+        $this->name = 'param';
+        $this->variableName = $variableName;
+        $this->type = $type;
+        $this->isVariadic = $isVariadic;
+        $this->description = $description;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(
+        $body,
+        TypeResolver $typeResolver = null,
+        DescriptionFactory $descriptionFactory = null,
+        TypeContext $context = null
+    ) {
+        Assert::stringNotEmpty($body);
+        Assert::allNotNull([$typeResolver, $descriptionFactory]);
+
+        list($firstPart, $body) = self::extractTypeFromBody($body);
+        $type = null;
+        $parts = preg_split('/(\s+)/Su', $body, 2, PREG_SPLIT_DELIM_CAPTURE);
+        $variableName = '';
+        $isVariadic = false;
+
+        // if the first item that is encountered is not a variable; it is a type
+        if ($firstPart && (strlen($firstPart) > 0) && ($firstPart[0] !== '$')) {
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             $type = $typeResolver->resolve($firstPart, $context);
         } else {
             // first part is not a type; we should prepend it to the parts array for further processing
@@ -78,6 +136,7 @@ final class Param extends TagWithType implements Factory\StaticMethod
         }
 
         // if the next item starts with a $ or ...$ it must be the variable name
+<<<<<<< HEAD
         if (isset($parts[0]) && (strpos($parts[0], '$') === 0 || strpos($parts[0], '...$') === 0)) {
             $variableName = array_shift($parts);
             array_shift($parts);
@@ -90,6 +149,21 @@ final class Param extends TagWithType implements Factory\StaticMethod
             }
 
             if (strpos($variableName, '$') === 0) {
+=======
+        if (isset($parts[0])
+            && (strlen($parts[0]) > 0)
+            && ($parts[0][0] === '$' || substr($parts[0], 0, 4) === '...$')
+        ) {
+            $variableName = array_shift($parts);
+            array_shift($parts);
+
+            if (substr($variableName, 0, 3) === '...') {
+                $isVariadic = true;
+                $variableName = substr($variableName, 3);
+            }
+
+            if (substr($variableName, 0, 1) === '$') {
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
                 $variableName = substr($variableName, 1);
             }
         }
@@ -101,28 +175,53 @@ final class Param extends TagWithType implements Factory\StaticMethod
 
     /**
      * Returns the variable's name.
+<<<<<<< HEAD
      */
     public function getVariableName() : ?string
+=======
+     *
+     * @return string
+     */
+    public function getVariableName()
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     {
         return $this->variableName;
     }
 
     /**
      * Returns whether this tag is variadic.
+<<<<<<< HEAD
      */
     public function isVariadic() : bool
+=======
+     *
+     * @return boolean
+     */
+    public function isVariadic()
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     {
         return $this->isVariadic;
     }
 
     /**
      * Returns a string representation for this tag.
+<<<<<<< HEAD
      */
     public function __toString() : string
     {
         return ($this->type ? $this->type . ' ' : '')
             . ($this->isVariadic() ? '...' : '')
             . ($this->variableName !== null ? '$' . $this->variableName : '')
+=======
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return ($this->type ? $this->type . ' ' : '')
+            . ($this->isVariadic() ? '...' : '')
+            . '$' . $this->variableName
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
             . ($this->description ? ' ' . $this->description : '');
     }
 }

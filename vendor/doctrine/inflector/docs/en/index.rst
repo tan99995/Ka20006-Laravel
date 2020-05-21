@@ -1,15 +1,27 @@
 Introduction
 ============
 
+<<<<<<< HEAD
 The Doctrine Inflector has methods for inflecting text. The features include pluralization,
 singularization, converting between camelCase and under_score and capitalizing
 words.
 
+=======
+The Doctrine Inflector has static methods for inflecting text.
+The features include pluralization, singularization,
+converting between camelCase and under_score and capitalizing
+words.
+
+All you need to use the Inflector is the ``Doctrine\Common\Inflector\Inflector``
+class.
+
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 Installation
 ============
 
 You can install the Inflector with composer:
 
+<<<<<<< HEAD
 .. code-block:: console
 
     $ composer require doctrine/inflector
@@ -128,6 +140,13 @@ This is an implementation of the `Null Object design pattern <https://sourcemaki
     use Doctrine\Inflector\NoopWordInflector;
 
     $inflector = new Inflector(new NoopWordInflector(), new NoopWordInflector());
+=======
+.. code-block::
+
+    $ composer require doctrine/inflector
+
+Here are the available methods that you can use:
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 Tableize
 ========
@@ -136,7 +155,11 @@ Converts ``ModelName`` to ``model_name``:
 
 .. code-block:: php
 
+<<<<<<< HEAD
     echo $inflector->tableize('ModelName'); // model_name
+=======
+    echo Inflector::tableize('ModelName'); // model_name
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 Classify
 ========
@@ -145,7 +168,11 @@ Converts ``model_name`` to ``ModelName``:
 
 .. code-block:: php
 
+<<<<<<< HEAD
     echo $inflector->classify('model_name'); // ModelName
+=======
+    echo Inflector::classify('model_name'); // ModelName
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 Camelize
 ========
@@ -154,6 +181,7 @@ This method uses `Classify`_ and then converts the first character to lowercase:
 
 .. code-block:: php
 
+<<<<<<< HEAD
     echo $inflector->camelize('model_name'); // modelName
 
 Capitalize
@@ -161,6 +189,15 @@ Capitalize
 
 Takes a string and capitalizes all of the words, like PHP's built-in
 ``ucwords`` function. This extends that behavior, however, by allowing the
+=======
+    echo Inflector::camelize('model_name'); // modelName
+
+ucwords
+=======
+
+Takes a string and capitalizes all of the words, like PHP's built-in
+ucwords function. This extends that behavior, however, by allowing the
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 word delimiters to be configured, rather than only separating on
 whitespace.
 
@@ -170,9 +207,15 @@ Here is an example:
 
     $string = 'top-o-the-morning to all_of_you!';
 
+<<<<<<< HEAD
     echo $inflector->capitalize($string); // Top-O-The-Morning To All_of_you!
 
     echo $inflector->capitalize($string, '-_ '); // Top-O-The-Morning To All_Of_You!
+=======
+    echo Inflector::ucwords($string); // Top-O-The-Morning To All_of_you!
+
+    echo Inflector::ucwords($string, '-_ '); // Top-O-The-Morning To All_Of_You!
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 Pluralize
 =========
@@ -181,11 +224,16 @@ Returns a word in plural form.
 
 .. code-block:: php
 
+<<<<<<< HEAD
     echo $inflector->pluralize('browser'); // browsers
+=======
+    echo Inflector::pluralize('browser'); // browsers
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 
 Singularize
 ===========
 
+<<<<<<< HEAD
 Returns a word in singular form.
 
 .. code-block:: php
@@ -224,3 +272,51 @@ The language rules in this library have been adapted from several different sour
 - `Ruby On Rails Inflector <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>`_
 - `ICanBoogie Inflector <https://github.com/ICanBoogie/Inflector>`_
 - `CakePHP Inflector <https://book.cakephp.org/3.0/en/core-libraries/inflector.html>`_
+=======
+.. code-block:: php
+
+    echo Inflector::singularize('browsers'); // browser
+
+Rules
+=====
+
+Customize the rules for pluralization and singularization:
+
+.. code-block:: php
+
+    Inflector::rules('plural', ['/^(inflect)or$/i' => '\1ables']);
+    Inflector::rules('plural', [
+        'rules' => ['/^(inflect)ors$/i' => '\1ables'],
+        'uninflected' => ['dontinflectme'],
+        'irregular' => ['red' => 'redlings']
+    ]);
+
+The arguments for the ``rules`` method are:
+
+- ``$type`` - The type of inflection, either ``plural`` or ``singular``
+- ``$rules`` - An array of rules to be added.
+- ``$reset`` - If true, will unset default inflections for all new rules that are being defined in $rules.
+
+Reset
+=====
+
+Clears Inflectors inflected value caches, and resets the inflection
+rules to the initial values.
+
+.. code-block:: php
+
+    Inflector::reset();
+
+Slugify
+=======
+
+You can easily use the Inflector to create a slug from a string of text
+by using the `tableize`_ method and replacing underscores with hyphens:
+
+.. code-block:: php
+
+    public static function slugify(string $text) : string
+    {
+        return str_replace('_', '-', Inflector::tableize($text));
+    }
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292

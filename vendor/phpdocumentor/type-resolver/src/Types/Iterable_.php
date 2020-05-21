@@ -13,16 +13,26 @@ declare(strict_types=1);
 
 namespace phpDocumentor\Reflection\Types;
 
+<<<<<<< HEAD
 /**
  * Value Object representing iterable type
  */
 final class Iterable_ extends AbstractList
+=======
+use phpDocumentor\Reflection\Type;
+
+/**
+ * Value Object representing iterable type
+ */
+final class Iterable_ implements Type
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
 {
     /**
      * Returns a rendered output of the Type as it would be used in a DocBlock.
      */
     public function __toString() : string
     {
+<<<<<<< HEAD
         if ($this->keyType) {
             return 'iterable<' . $this->keyType . ',' . $this->valueType . '>';
         }
@@ -32,5 +42,8 @@ final class Iterable_ extends AbstractList
         }
 
         return 'iterable<' . $this->valueType . '>';
+=======
+        return 'iterable';
+>>>>>>> 2e34f1a134e394fe17250c183157072a64206292
     }
 }
