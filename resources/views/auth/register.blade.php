@@ -81,13 +81,8 @@
                         </div>
 
                         <div class="form-group row ">
-<<<<<<< Updated upstream
                           <div class="col-md-8 offset-md-5" >
-                                <button type="submit" class="btn btn-primary" style = "display:flex;align-item:center;">
-=======
-                          <div class="col-sm-offset-2 col-sm-10" >
                                 <button type="submit" class="btn btn-primary">
->>>>>>> Stashed changes
                                     {{ __('Register') }}
                                 </button>
                             </div>  
