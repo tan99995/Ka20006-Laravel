@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -14,7 +14,7 @@
                         <div class="form-group row">
                             <label for="c_id" class="col-md-4 col-form-label text-md-right">{{ __('Calculation ID') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <input id="c_id" type="text" class="form-control @error('c_id') is-invalid @enderror" name="c_id" value="{{ old('c_id') }}" required autocomplete="c_id" autofocus>
 
                                 @error('c_id')
@@ -24,23 +24,24 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="optical_u" class="col-md-4 col-form-label text-md-right">{{ __('Optical u') }}</label>
+                        <div class="row">
+                            <label for="optical_u" class="col-md-2 col-form-label text-md-right">{{ __('Optical u') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="optical_u" type="number" class="form-control @error('optical_u') is-invalid @enderror" name="optical_u" value="{{ old('optical_u') }}" required autocomplete="optical_u" autofocus>
+                            <div class="col-md-2">
+                                <input id="optical_u" type="text" class="form-control @error('optical_u') is-invalid @enderror" name="optical_u" value="{{ old('optical_u') }}" required autocomplete="optical_u" autofocus>
 
                                 @error('optical_u')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="optical_g" class="col-md-4 col-form-label text-md-right">{{ __(' Optical g') }}</label>
+                        <!-- </div>
+                        <div class="form-group col"> -->
+                            <label for="optical_g" class="col-md-2 col-form-label text-md-right">{{ __(' Optical g') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <input id="optical_g" type="number" class="form-control @error('c_optical_gid') is-invalid @enderror" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
 
                                 @error('optical_g')
@@ -49,11 +50,11 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="optical_r" class="col-md-4 col-form-label text-md-right">{{ __('Optical r') }}</label>
+                        <!-- </div>
+                        <div class="form-group row"> -->
+                            <label for="optical_r" class="col-md-2 col-form-label text-md-right">{{ __('Optical r') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <input id="optical_r" type="text" class="form-control @error('optical_r') is-invalid @enderror" name="optical_r" value="{{ old('optical_r') }}" required autocomplete="optical_r" autofocus>
 
                                 @error('optical_r')
