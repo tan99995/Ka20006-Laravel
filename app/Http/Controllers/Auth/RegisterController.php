@@ -68,7 +68,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'institution' => $data['institution'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password']), //uses bycrypt hash algorithm
         ]);
     }
 }
