@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="form-group row ">
-                          <div class="col-md-7 " >
+                          <div class="col-md-8 offset-md-5" >
                                 <button type="submit" class="btn btn-primary" style = "display:flex;align-item:center;">
                                     {{ __('Register') }}
                                 </button>
