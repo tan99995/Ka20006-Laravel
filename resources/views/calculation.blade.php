@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Calculate RedShift</title>
-
-        </head>
-    <body>
+@section('content')
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Redshift Estimator') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('calculation') }}">
@@ -217,5 +210,4 @@
     </div>
 </div>
     
-    </body>
-</html>
+ @endsection

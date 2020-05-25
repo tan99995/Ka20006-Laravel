@@ -8,6 +8,6 @@ class CalculationController extends Controller
 {
     //
     public function index(){
-        return view('Calculation');
+        return view('calculation');
     }
 }
