@@ -42,7 +42,7 @@
                             <label for="optical_g" class="col-md-2 col-form-label text-md-right">{{ __(' Optical g') }}</label>
 
                             <div class="col-md-2">
-                                <input id="optical_g" type="number" class="form-control @error('c_optical_gid') is-invalid @enderror" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
+                                <input id="optical_g" stepped="o.o1" type="number" class="form-control @error('c_optical_gid') is-invalid @enderror" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
 
                                 @error('optical_g')
                                     <span class="invalid-feedback" role="alert">
@@ -189,12 +189,15 @@
                                 </button>
                             </div>
                         </div>
+  
+                       
 
-                        <div class="form-group row">
+                    </form>
+                     <div class="form-group row">
                             <label for="redShift" class="col-md-4 col-form-label text-md-right">{{ __('RedShift') }}</label>
 
                             <div class="col-md-6">
-                                <input id="redShift" type="text" class="form-control @error('redShift') is-invalid @enderror" name="redShift" value="{{ old('redShift') }}" required autocomplete="redShift" autofocus>
+                              
 
                                 @error('redShift')
                                     <span class="invalid-feedback" role="alert">
@@ -203,8 +206,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                    </form>
                 </div>
             </div>
         </div>
