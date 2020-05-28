@@ -2,8 +2,7 @@
 
 @section('content')
 
-             
-   <div class="container-fluid" >
+  <div class="container-fluid" >
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card" style="background-color:#e9c46a;">
@@ -31,7 +30,7 @@
                             <label for="optical_u" class="col-md-4 col-form-label text-md-right">{{ __('Optical u') }}</label>
 
                             <div class="col-md-2">
-                                <input id="optical_u" type="text" class="form-control @error('optical_u') is-invalid @enderror" name="optical_u" value="{{ old('optical_u') }}" required autocomplete="optical_u" autofocus>
+                                <input id="optical_u" type="number" class="form-control @error('optical_u') is-invalid @enderror" name="optical_u" value="{{ old('optical_u') }}" required autocomplete="optical_u" autofocus>
 
                                 @error('optical_u')
                                     <span class="invalid-feedback" role="alert">
@@ -109,7 +108,7 @@
                            
 
                             <div class="col-md-2">
-                                <input id="infrared_four_five" stepped="o.o1" type="number" class="form-control @error('infrared_four_five') is-invalid @enderror" name="infrared_four_five" value="{{ old('infrared_four_five') }}" required autocomplete="infrared_four_five" autofocus>
+                                <input id="infrared_four_five"  type="number" class="form-control @error('infrared_four_five') is-invalid @enderror" name="infrared_four_five" value="{{ old('infrared_four_five') }}" required autocomplete="infrared_four_five" autofocus>
  <label for="infrared_four_five" class="row-md-2">{{ __('Infrared 4.5') }}</label>
                                 @error('infrared_four_five')
                                     <span class="invalid-feedback" role="alert">
@@ -122,7 +121,7 @@
                           
 
                             <div class="col-md-2">
-                                <input id="infrared_five_eight" stepped="o.o1" type="number" class="form-control @error('infrared_five_eight') is-invalid @enderror" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
+                                <input id="infrared_five_eight" type="number" class="form-control @error('infrared_five_eight') is-invalid @enderror" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
   <label for="infrared_five_eight" class="row-md-2">{{ __('Infrared 4.8') }}</label>
                                 @error('infrared_five_eight')
                                     <span class="invalid-feedback" role="alert">
@@ -135,7 +134,7 @@
                             <label for="infrared_eight_zero" class="col-md-4 col-form-label text-md-right">{{ __('Infrared 8.0') }}</label>
 
                             <div class="col-md-2">
-                                <input id="infrared_eight_zero" stepped="o.o1" type="number" class="form-control @error('infrared_eight_zero') is-invalid @enderror" name="infrared_eight_zero" value="{{ old('infrared_eight_zero') }}" required autocomplete="infrared_eight_zero" autofocus>
+                                <input id="infrared_eight_zero" type="number" class="form-control @error('infrared_eight_zero') is-invalid @enderror" name="infrared_eight_zero" value="{{ old('infrared_eight_zero') }}" required autocomplete="infrared_eight_zero" autofocus>
 
                                 @error('infrared_eight_zero')
                                     <span class="invalid-feedback" role="alert">
@@ -148,7 +147,7 @@
                             
 
                             <div class="col-md-2">
-                                <input id="infrared_J" stepped="o.o1" type="number" class="form-control @error('infrared_J') is-invalid @enderror" name="infrared_J" value="{{ old('infrared_J') }}" required autocomplete="infrared_J" autofocus>
+                                <input id="infrared_J" type="number" class="form-control @error('infrared_J') is-invalid @enderror" name="infrared_J" value="{{ old('infrared_J') }}" required autocomplete="infrared_J" autofocus>
 <label for="infrared_J" class="row-md-2">{{ __('Infrared J') }}</label>
                                 @error('infrared_J')
                                     <span class="invalid-feedback" role="alert">
@@ -161,7 +160,7 @@
                            
 
                             <div class="col-md-2">
-                                <input id="infrared_K" stepped="o.o1" type="number" class="form-control @error('infrared_K') is-invalid @enderror" name="infrared_K" value="{{ old('infrared_K') }}" required autocomplete="infrared_K" autofocus>
+                                <input id="infrared_K" type="number" class="form-control @error('infrared_K') is-invalid @enderror" name="infrared_K" value="{{ old('infrared_K') }}" required autocomplete="infrared_K" autofocus>
  <label for="infrared_K" class="row-md-2">{{ __('Infrared K') }}</label>
                                 @error('infrared_K')
                                     <span class="invalid-feedback" role="alert">
@@ -174,7 +173,7 @@
                             <label for="radio_one_four" class="col-md-4 col-form-label text-md-right">{{ __('Radio 1.4') }}</label>
 
                             <div class="col-md-6">
-                                <input id="radio_one_four" stepped="o.o1" type="number" class="form-control @error('radio_one_four') is-invalid @enderror" name="radio_one_four" value="{{ old('radio_one_four') }}" required autocomplete="radio_one_four" autofocus>
+                                <input id="radio_one_four" type="number" class="form-control @error('radio_one_four') is-invalid @enderror" name="radio_one_four" value="{{ old('radio_one_four') }}" required autocomplete="radio_one_four" autofocus>
 
                                 @error('radio_one_four')
                                     <span class="invalid-feedback" role="alert">
@@ -215,5 +214,12 @@
                                 </button>
                             </div>
                         </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
     
  @endsection
