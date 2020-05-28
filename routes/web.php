@@ -14,11 +14,16 @@
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/guest', function(){
+    return view('guest');
+})->name('guest');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/calculation', 'CalculationController@index')->name('calculation');
+
+
 
 Route::post('/calculation', "CalculationController@store");
