@@ -43,7 +43,7 @@
                             <label for="optical_g" class="col-md-4 col-form-label text-md-right">{{ __(' Optical g') }}</label>
 
                             <div class="col-md-6">
-                                <input id="optical_g" stepped="o.o001" type="number" class="form-control @error('c_optical_gid') is-invalid @enderror" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
+                                <input id="optical_g" type="number" class="form-control @error('c_optical_gid') is-invalid @enderror" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
 
                                 @error('optical_g')
                                     <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
                             <label for="optical_r" class="col-md-4 col-form-label text-md-right">{{ __('Optical r') }}</label>
 
                             <div class="col-md-6">
-                                <input id="optical_r" stepped="o.o1" type="number" class="form-control @error('optical_r') is-invalid @enderror" name="optical_r" value="{{ old('optical_r') }}" required autocomplete="optical_r" autofocus>
+                                <input id="optical_r" type="number" class="form-control @error('optical_r') is-invalid @enderror" name="optical_r" value="{{ old('optical_r') }}" required autocomplete="optical_r" autofocus>
 
                                 @error('optical_r')
                                     <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
                             <label for="optical_i" class="col-md-4 col-form-label text-md-right">{{ __('Optical i') }}</label>
 
                             <div class="col-md-6">
-                                <input id="optical_i" stepped="o.o1" type="number" class="form-control @error('optical_i') is-invalid @enderror" name="optical_i" value="{{ old('optical_i') }}" required autocomplete="optical_i" autofocus>
+                                <input id="optical_i" type="number" class="form-control @error('optical_i') is-invalid @enderror" name="optical_i" value="{{ old('optical_i') }}" required autocomplete="optical_i" autofocus>
 
                                 @error('optical_i')
                                     <span class="invalid-feedback" role="alert">
@@ -82,7 +82,7 @@
                             <label for="optical_z" class="col-md-4 col-form-label text-md-right">{{ __('Optical z') }}</label>
 
                             <div class="col-md-6">
-                                <input id="optical_z" stepped="o.o1" type="number" class="form-control @error('optical_z') is-invalid @enderror" name="optical_z" value="{{ old('optical_z') }}" required autocomplete="optical_z" autofocus>
+                                <input id="optical_z" type="number" class="form-control @error('optical_z') is-invalid @enderror" name="optical_z" value="{{ old('optical_z') }}" required autocomplete="optical_z" autofocus>
 
                                 @error('c_id')
                                     <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
                             <label for="infrared_three_six" class="col-md-4 col-form-label text-md-right">{{ __('Infrared 3.6') }}</label>
 
                             <div class="col-md-6">
-                                <input id="infrared_three_six" stepped="o.o1" type="number" class="form-control @error('infrared_three_six') is-invalid @enderror" name="infrared_three_six" value="{{ old('infrared_three_six') }}" required autocomplete="infrared_three_six" autofocus>
+                                <input id="infrared_three_six" type="number" class="form-control @error('infrared_three_six') is-invalid @enderror" name="infrared_three_six" value="{{ old('infrared_three_six') }}" required autocomplete="infrared_three_six" autofocus>
 
                                 @error('infrared_three_six')
                                     <span class="invalid-feedback" role="alert">
@@ -118,7 +118,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="infrared_five_eight" class="col-md-4 col-form-label text-md-right">{{ __('Infrared five_eight') }}</label>
+                            <label for="infrared_five_eight" class="col-md-4 col-form-label text-md-right">{{ __('Infrared 4.5') }}</label>
 
                             <div class="col-md-6">
                                 <input id="infrared_five_eight" stepped="o.o1" type="number" class="form-control @error('infrared_five_eight') is-invalid @enderror" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
@@ -188,7 +188,15 @@
 
                             <div class="col-md-6">
                                 <input id="redshift_result" type="number" class="form-control @error('redshift_result') is-invalid @enderror" name="redshift_result" value="{{ old('redshift_result') }}" required autocomplete="redshift_result" autofocus>
-
+                                <?php
+                    if (isset($_POST['form_submit']) && $_POST['form_submit'] != "") :
+                        $userinput = $_POST['input'];
+                        ob_start();
+                        passthru(("python redshift.py " . $userinput));
+                        $output = ob_get_clean();
+                        echo($output);
+                    endif;
+                               ?>
                                 @error('redshift_result')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -198,12 +206,19 @@
                         </div>
 
                         <div class="form-group row mb-6">
-                            <div class="col-md-20 offset-md-5">
+                            <div class="col-md-20 offset-md-3">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Calculate') }}
                                 </button>
                             </div>
                         </div>   
+                        <div class="form-group row mb-6">
+                            <div class="col-md-20 offset-md-3">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Show History') }}
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

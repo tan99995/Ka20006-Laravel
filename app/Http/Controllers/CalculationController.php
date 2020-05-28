@@ -16,7 +16,7 @@ class CalculationController extends Controller
 
         //$calculate = new redshift_table();
 
-        redshift_table::create(request(['assigned_calc_ID', 'optical_u', 'optical_g', 'optical_r', 'optical_i', 'optical_z', 'infrared_three_six', 'infrared_four_five', 'infrared_five_eight', 'infrared_eight_zero', 'infrared_j', 'infrared_k', 'radio_one_four', 'redshift_result']));
+        redshift_table::create(request(['assigned_calc_ID', 'optical_u', 'optical_g', 'optical_r', 'optical_i', 'optical_z', 'infrared_three_six', 'infrared_four_five', 'infrared_five_eight', 'infrared_eight_zero', 'infrared_J', 'infrared_K', 'radio_one_four', 'redshift_result']));
 
         //$calculate->save();
 
