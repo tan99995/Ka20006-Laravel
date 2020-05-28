@@ -25,8 +25,8 @@ class CreateRedshiftTables extends Migration
             $table->float('infrared_four_five');
             $table->float('infrared_five_eight');
             $table->float('infrared_eight_zero');
-            $table->float('infrared_i');
-            $table->float('infrared_j');
+            $table->float('infrared_J');
+            $table->float('infrared_K');
             $table->float('radio_one_four');
             $table->float('redshift_result');
             $table->timestamps();
