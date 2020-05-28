@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Redshift Estimator') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('calculation') }}">
+                    <form method="POST" action="{{ route('calculation') }}" >
                         @csrf
 
                         <div class="form-group row">
@@ -183,28 +183,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="redshift_result" class="col-md-4 col-form-label text-md-right">{{ __('Redshift') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="redshift_result" type="number" class="form-control @error('redshift_result') is-invalid @enderror" name="redshift_result" value="{{ old('redshift_result') }}" required autocomplete="redshift_result" autofocus>
-                                <?php
-                    if (isset($_POST['form_submit']) && $_POST['form_submit'] != "") :
-                        $userinput = $_POST['input'];
-                        ob_start();
-                        passthru(("python redshift.py " . $userinput));
-                        $output = ob_get_clean();
-                        echo($output);
-                    endif;
-                               ?>
-                                @error('redshift_result')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
+                    
                         <div class="form-group row mb-6">
                             <div class="col-md-20 offset-md-3">
                                 <button type="submit" class="btn btn-primary">
