@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card" style="background-color:#002855; color:white">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">

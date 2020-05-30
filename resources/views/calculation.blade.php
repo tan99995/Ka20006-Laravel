@@ -5,7 +5,7 @@
   <div class="container-fluid" >
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card" style="background-color:#e9c46a;">
+            <div class="card" style="background-color:#002855; color:white">
                 <div class="card-header">{{ __('Redshift Estimator') }}</div>
 
                 <div class="card-body">

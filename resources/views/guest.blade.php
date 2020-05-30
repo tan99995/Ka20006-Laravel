@@ -21,9 +21,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
 </head>
-<body style="background-color:#3a86ff;">
+<body style="background-color:#242423;">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color:#fbb13c!important;">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color:#0466c8!important; ">
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'RedShift') }}
@@ -39,7 +39,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="color:#fff!important;">
                         <!-- Authentication Links -->
                         @guest
 
@@ -62,7 +62,7 @@
    <div class="container-fluid" >
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card" style="background-color:#e9c46a;">
+            <div class="card" style="background-color:#002855; color:white">
                 <div class="card-header">{{ __('Redshift Estimator') }}</div>
 
                 <div class="card-body">
