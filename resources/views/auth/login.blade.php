@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +46,7 @@
     
 <!--===============================================================================================-->
 </head>
+<main >
 <body >
 	
 	<div class="limiter" >
@@ -49,7 +54,9 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                 @csrf    
-                <span class="login100-form-title p-b-49">
+              
+
+  <span class="login100-form-title p-b-49">
 						Login
 					</span>
 
@@ -68,7 +75,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Password</span>
-						<input id="password" type="password" class="input100" type="password" name="pass" placeholder="Type your password" required autocomplete="current-password">
+						<input id="password" type="password" class="input100" type="password" name="password" placeholder="Type your password" required autocomplete="current-password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					
@@ -124,4 +131,7 @@
 	<script src="js/main.js"></script>
 
 </body>
+</main>
 </html>
+
+
