@@ -10,7 +10,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+				<form class="login100-form validate-form" method="POST" action="{{ route('password.email') }}">
                 @csrf    
               
 
