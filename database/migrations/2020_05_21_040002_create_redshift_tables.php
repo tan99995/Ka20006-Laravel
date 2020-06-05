@@ -15,6 +15,7 @@ class CreateRedshiftTables extends Migration
     {
         Schema::create('redshift_tables', function (Blueprint $table) {
             $table->bigIncrements('calculation_ID');
+            $table->foreignId('user_ID');
             $table->string('assigned_calc_ID');
             $table->float('optical_u');
             $table->float('optical_g');

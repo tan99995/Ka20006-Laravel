@@ -38,7 +38,7 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{{ asset('images/icons/favicon.ico') }}"/>
 <!--===============================================================================================-->
-	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 <!--===============================================================================================-->
@@ -58,6 +58,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     
 <!--===============================================================================================-->
+
+<link href="{{ asset('vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i') }}" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ asset('vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('vendor/datepicker/daterangepicker.css') }}" rel="stylesheet" media="all">
+
 </head>
 <body>
   @yield('content')
@@ -79,6 +89,11 @@
 <!--===============================================================================================-->
 	<script src="{{ asset('vendor/countdowntime/countdowntime.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
+  
+   
+
+    <!-- Main JS-->
+    <script src="{{ asset('js/global.js') }}"></script>
 </body>
 </html>

@@ -14,6 +14,15 @@ class CalculationController extends Controller
         return view('calculation');
     }
 
+    public function home(){
+        $calculations= redshift_table::all();
+      
+        return view('history', compact('calculations'));
+    }
+ public function show($id)
+    {
+        //
+    }
     public function store(){
 
         //$calculate = new redshift_table();
