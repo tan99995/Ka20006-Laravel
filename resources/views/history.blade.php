@@ -16,7 +16,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                                <a class="nav-link" href="{{ route('history') }}">{{ __('History') }}</a>
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
                     </ul>
 
@@ -98,19 +98,6 @@
  </tr>
         @endforeach
      
-   
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
   </tbody>
 </table>
 </div>
