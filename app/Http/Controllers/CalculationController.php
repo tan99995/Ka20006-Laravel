@@ -85,45 +85,45 @@ class CalculationController extends Controller
     public function store(){
 +
 
-        $calculate = new redshift_table();
+        //$calculated = new redshift_table();
 
-        redshift_table::create(request(['assigned_calc_ID', 'user_ID', 'optical_u', 'optical_g', 'optical_r', 'optical_i', 'optical_z', 'infrared_three_six', 'infrared_four_five', 'infrared_five_eight', 'infrared_eight_zero', 'infrared_J', 'infrared_K', 'radio_one_four', 'redshift_result']));
+        // redshift_table::create(request(['assigned_calc_ID', 'user_ID', 'optical_u', 'optical_g', 'optical_r', 'optical_i', 'optical_z', 'infrared_three_six', 'infrared_four_five', 'infrared_five_eight', 'infrared_eight_zero', 'infrared_J', 'infrared_K', 'radio_one_four', 'redshift_result']));
 
-        $calculate->save();
+        //$calculated->save();
 
         // return redirect('/calculation');
 
 
-        //  $calculate = new redshift_table();
-		// $calculate->assigned_calc_ID = $request->input('assigned_calc_ID');
-    	// $calculate->optical_u = $request->input('optical_u');
-    	// $calculate->optical_g = $request->input('optical_g');
-    	// $calculate->optical_r = $request->input('optical_r');
-    	// $calculate->optical_i = $request->input('optical_i');
-    	// $calculate->optical_z = $request->input('optical_z');
-    	// $calculate->infrared_three_six = $request->input('infrared_three_six');
-    	// $calculate->infrared_four_five = $request->input('infrared_four_five');
-    	// $calculate->infrared_five_eight = $request->input('infrared_five_eight');
-    	// $calculate->infrared_eight_zero = $request->input('infrared_eight_zero');
-    	// $calculate->infrared_J = $request->input('infrared_J');
-    	// $calculate->infrared_K = $request->input('infrared_K');
-        // $calculate->radio_one_four = $request->input('radio_one_four');
-    	// $calculate->user_ID = 2;
-    	// // optical g + optical u
-    	// $str =  $calculate->optical_u . " " . $calculate->optical_g . " " . $calculate->optical_r  . " " . $calculate->optical_i . " " . $calculate->optical_z .  " " . $calculate->infrared_three_six . " " . $calculate->infrared_four_five . " " . $calculate->infrared_five_eight . " " . $calculate->infrared_eight_zero . " " . $calculate->infrared_J . " " . $calculate->infrared_K  . " " .  $calculate->radio_one_four;
-   		// $str = escapeshellcmd($str);
-    	// $process = new Process('python testWebPy.py ' . $str);
-    	// try {
-  		// 	  $process->mustRun();
-   		// 	  $calculate->redshift_result = $process->getOutput();
-		// } catch (ProcessFailedException $exception) {
-   		// 	echo $exception->getMessage();
-        // 	$calculate->redshift_result = -1;
-        // }
+         $calculated = new redshift_table();
+		$calculated->assigned_calc_ID = $request->input('assigned_calc_ID');
+    	$calculated->optical_u = $request->input('optical_u');
+    	$calculated->optical_g = $request->input('optical_g');
+    	$calculated->optical_r = $request->input('optical_r');
+    	$calculated->optical_i = $request->input('optical_i');
+    	$calculated->optical_z = $request->input('optical_z');
+    	$calculated->infrared_three_six = $request->input('infrared_three_six');
+    	$calculated->infrared_four_five = $request->input('infrared_four_five');
+    	$calculated->infrared_five_eight = $request->input('infrared_five_eight');
+    	$calculated->infrared_eight_zero = $request->input('infrared_eight_zero');
+    	$calculated->infrared_J = $request->input('infrared_J');
+    	$calculated->infrared_K = $request->input('infrared_K');
+        $calculated->radio_one_four = $request->input('radio_one_four');
+    	$calculated->user_ID = 2;
+    	// optical g + optical u
+    	$str =  $calculated->optical_u . " " . $calculated->optical_g . " " . $calculated->optical_r  . " " . $calculated->optical_i . " " . $calculated->optical_z .  " " . $calculated->infrared_three_six . " " . $calculated->infrared_four_five . " " . $calculated->infrared_five_eight . " " . $calculated->infrared_eight_zero . " " . $calculated->infrared_J . " " . $calculated->infrared_K  . " " .  $calculated->radio_one_four;
+   		$str = escapeshellcmd($str);
+    	$process = new Process('python testWebPy.py ' . $str);
+    	try {
+  			  $process->mustRun();
+   			  $calculated->redshift_result = $process->getOutput();
+		} catch (ProcessFailedException $exception) {
+   			echo $exception->getMessage();
+        	$calculated->redshift_result = -1;
+        }
        
-        //$calculate->save();
+        $calculated->save();
       
-        // return redirect('/calculation')->with(['result', $calculate]);
+        // return redirect('/calculation')->with(['result', $calculated]);
         return view('/calculation');
     }
 }

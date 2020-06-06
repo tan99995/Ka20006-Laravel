@@ -116,7 +116,7 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared 5.8</label>
-                                    <input id="infrared_four_eight" type="text" class="input--style-4" name="infrared_four_eight" value="{{ old('infrared_four_eight') }}" required autocomplete="infrared_four_eight" autofocus>
+                                    <input id="infrared_five_eight" type="text" class="input--style-4" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
                                 </div>
                             </div>
                              <div class="col-4">
@@ -146,8 +146,18 @@
                                     <label class="label text-md-right">Radio 1.4</label>
                                     <input id="radio_one_four" type="text" class="input--style-4" name="radio_one_four" value="{{ old('radio_one_four') }}" required autocomplete="radio_one_four" autofocus>
                                 </div>
+                                <div class="input-group">
+                                    <label class="label text-md-right">Redshift</label>
+                                    <input id="redshift_result" type="text" class="input--style-4" name="redshift_result" value="{{ old('redshift_result') }}" required autocomplete="redshift_result" autofocus>
+                                </div>
+                                 <div class="input-group">
+                                    <label class="label text-md-right">User</label>
+                                    <input id="user_ID" type="text" class="input--style-4" name="user_ID" value="{{ old('user_ID') }}" required autocomplete="user_ID" autofocus>
+                                </div>
                             </div>
                             </div>
+
+
                       
                         
                         <div class="p-t-15">

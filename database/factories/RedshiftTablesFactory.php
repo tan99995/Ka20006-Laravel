@@ -10,7 +10,7 @@ $factory->define(redshift_tables::class, function (Faker $faker) {
         //
          
         'assigned_calc_ID' => $faker->numberBetween(1,100),
-        'user_ID' => 2, 
+        'user_ID' => $faker->numberBetween(1,100), 
         'optical_u' => $faker->numberBetween(1,100),
          'optical_g'=> $faker->numberBetween(1,100), 
          'optical_r'=> $faker->numberBetween(1,100), 
