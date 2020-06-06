@@ -18,6 +18,15 @@
                         <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
+                            <li class="nav-item">
+                            <form class="form-inline mr-auto">
+                            @csrf
+      <div class="md-form my-0">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        <i class="fas fa-search text-white ml-3" aria-hidden="true"></i>
+      </div>
+      </li>
+    </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,28 +60,27 @@
         </nav>
 
 <body style="background-image: url('/images/bg1.jpg')">
-<div class="card">
+
 <div class="overflow-auto">
 
 
-<table class="table">
-  <thead class="thead-light">
+<table class="table table-light">
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Optical u</th>
-       <th scope="col">Optical g</th>
-        <th scope="col">Optical r</th>
-         <th scope="col">Optical i</th>
-          <th scope="col">Optical z</th>
-          <th scope="col">Infrared 3.6</th>
-          <th scope="col">Infrared 4.5</th>
-          <th scope="col">Infrared 5.8</th>
-          <th scope="col">Infrared 8.0</th>
-          <th scope="col">Infrared j</th>
-
-          <th scope="col">Infrared k</th>
-          <th scope="col">Radio 1.4</th>
-          <th scope="col">Redshift Result</th>
+      <th scope="col"><a href='/history?galaxy_id'>Galaxy ID</th>
+      <th scope="col"><a href='/history?optical_u'>Optical u</th>
+     <th scope="col"><a href='/history?optical_g'>Optical g</th>
+        <th scope="col"><a href='/history?optical_r'>Optical r</th>
+         <th scope="col"><a href='/history?optical_i'>Optical i</th>
+          <th scope="col"><a href='/history?optical_z'>Optical z</th>
+          <th scope="col"><a href='/history?infrared_three_six'>Infrared 3.6</th>
+          <th scope="col"><a href='/history?infrared_four_five'>Infrared 4.5</th>
+          <th scope="col"><a href='/history?infrared_five_eight'>Infrared 5.8</th>
+          <th scope="col"><a href='/history?infrared_eight_zero'>Infrared 8.0</th>
+          <th scope="col"><a href='/history?infrared_J'>Infrared j</th>
+          <th scope="col"><a href='/history?infrared_K'>Infrared k</th>
+          <th scope="col"><a href='/history?radio_1.4'>Radio 1.4</th>
+          <th scope="col"><a href='/history?redshift_result'>Redshift Result</th>
 
       
     </tr>
@@ -81,7 +89,7 @@
    
         @foreach($calculations as $calculation)
          <tr>
-    <th scope="row">{{ $calculation->calculation_ID }}</th>
+    <th scope="row">{{ $calculation->assigned_calc_ID }}</th>
       <td>{{ $calculation->optical_u }}</td>
       <td>{{ $calculation->optical_g }}</td>
      <td>{{ $calculation->optical_r }}</td>
@@ -100,7 +108,8 @@
      
   </tbody>
 </table>
+{{ $calculations->links()}}
 </div>
-</div>
+
 </body>
          @endsection
