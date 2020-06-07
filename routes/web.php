@@ -30,4 +30,4 @@ Route::get('/calculation', 'CalculationController@index')->name('calculation');
 Route::get('/history', 'CalculationController@home')->name('history');
 
 
-Route::post('/calculation', "CalculationController@store")->name('calculation');
+Route::post('/calculation', "CalculationController@store");

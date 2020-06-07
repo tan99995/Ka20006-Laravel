@@ -3,12 +3,10 @@
 @section('content')
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
-                <!-- <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'RedShift') }}
-                </a>
+               
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                </button> -->
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -61,18 +59,24 @@
                                     <input id="assigned_calc_ID" type="text" class="input--style-4" name="assigned_calc_ID" value="{{ old('assigned_calc_ID') }}" required autocomplete="assigned_calc_ID" autofocus>
                                 </div>
                             </div>
+                            <div class="col-4">
+                            <div class="input-group">
+                                    <label class="label text-md-right">User</label>
+                                    <input id="user_ID" type="number" class="input--style-4" name="user_ID" value="{{ old('user_ID') }}" required autocomplete="user_ID" autofocus>
+                                </div>
+</div>
                         <!-- </div>
                         <div class="row"> -->
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Optical U</label>
-                                    <input id="optical_u" type="text" class="input--style-4" name="optical_u" value="{{ old('optical_u') }}" required autocomplete="optical_u" autofocus>
+                                    <input id="optical_u" type="number" class="input--style-4" name="optical_u" value="{{ old('optical_u') }}" required autocomplete="optical_u" autofocus>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Optical R</label>
-                                    <input id="optical_r" type="text" class="input--style-4" name="optical_r" value="{{ old('optical_r') }}" required autocomplete="optical_r" autofocus>
+                                    <input id="optical_r" type="number" class="input--style-4" name="optical_r" value="{{ old('optical_r') }}" required autocomplete="optical_r" autofocus>
                                 </div>
                             </div>
                         <!-- </div>
@@ -80,13 +84,13 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Optical I</label>
-                                    <input id="optical_i" type="text" class="input--style-4" name="optical_i" value="{{ old('optical_i') }}" required autocomplete="optical_i" autofocus>
+                                    <input id="optical_i" type="number" class="input--style-4" name="optical_i" value="{{ old('optical_i') }}" required autocomplete="optical_i" autofocus>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Optical G</label>
-                                    <input id="optical_g" type="text" class="input--style-4" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
+                                    <input id="optical_g" type="number" class="input--style-4" name="optical_g" value="{{ old('optical_g') }}" required autocomplete="optical_g" autofocus>
                                 </div>
                             </div>
                         <!-- </div>
@@ -94,7 +98,7 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Optical Z</label>
-                                    <input id="optical_z" type="text" class="input--style-4" name="optical_z" value="{{ old('optical_z') }}" required autocomplete="optical_z" autofocus>
+                                    <input id="optical_z" type="number" class="input--style-4" name="optical_z" value="{{ old('optical_z') }}" required autocomplete="optical_z" autofocus>
                                 </div>
                             </div>
                         <!-- </div>
@@ -102,13 +106,13 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared 3.6</label>
-                                    <input id="infrared_three_six" type="text" class="input--style-4" name="infrared_three_six" value="{{ old('infrared_three_six') }}" required autocomplete="infrared_three_six" autofocus>
+                                    <input id="infrared_three_six" type="number" class="input--style-4" name="infrared_three_six" value="{{ old('infrared_three_six') }}" required autocomplete="infrared_three_six" autofocus>
                                 </div>
                             </div>
                              <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared 4.5</label>
-                                    <input id="infrared_four_five" type="text" class="input--style-4" name="infrared_four_five" value="{{ old('infrared_four_five') }}" required autocomplete="infrared_four_five" autofocus>
+                                    <input id="infrared_four_five" type="number" class="input--style-4" name="infrared_four_five" value="{{ old('infrared_four_five') }}" required autocomplete="infrared_four_five" autofocus>
                                 </div>
                             </div>
                         <!-- </div>
@@ -116,13 +120,13 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared 5.8</label>
-                                    <input id="infrared_five_eight" type="text" class="input--style-4" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
+                                    <input id="infrared_five_eight" type="number" class="input--style-4" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
                                 </div>
                             </div>
                              <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared 8.0</label>
-                                    <input id="infrared_eight_zero" type="text" class="input--style-4" name="infrared_eight_zero" value="{{ old('infrared_eight_zero') }}" required autocomplete="infrared_eight_zero" autofocus>
+                                    <input id="infrared_eight_zero" type="number" class="input--style-4" name="infrared_eight_zero" value="{{ old('infrared_eight_zero') }}" required autocomplete="infrared_eight_zero" autofocus>
                                 </div>
                             </div>
                         <!-- </div>
@@ -130,13 +134,13 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared J</label>
-                                    <input id="infrared_J" type="text" class="input--style-4" name="infrared_J" value="{{ old('infrared_J') }}" required autocomplete="infrared_J" autofocus>
+                                    <input id="infrared_J" type="number" class="input--style-4" name="infrared_J" value="{{ old('infrared_J') }}" required autocomplete="infrared_J" autofocus>
                                 </div>
                             </div>
                              <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared K</label>
-                                    <input id="infrared_K" type="text" class="input--style-4" name="infrared_K" value="{{ old('infrared_K') }}" required autocomplete="infrared_K" autofocus>
+                                    <input id="infrared_K" type="number" class="input--style-4" name="infrared_K" value="{{ old('infrared_K') }}" required autocomplete="infrared_K" autofocus>
                                 </div>
                             </div>
                         </div>
@@ -144,16 +148,13 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Radio 1.4</label>
-                                    <input id="radio_one_four" type="text" class="input--style-4" name="radio_one_four" value="{{ old('radio_one_four') }}" required autocomplete="radio_one_four" autofocus>
+                                    <input id="radio_one_four" type="number" class="input--style-4" name="radio_one_four" value="{{ old('radio_one_four') }}" required autocomplete="radio_one_four" autofocus>
                                 </div>
                                 <div class="input-group">
                                     <label class="label text-md-right">Redshift</label>
-                                    <input id="redshift_result" type="text" class="input--style-4" name="redshift_result" value="{{ old('redshift_result') }}" required autocomplete="redshift_result" autofocus>
+                                    <input id="redshift_result" type="number" class="input--style-4" name="redshift_result" value="{{ old('redshift_result') }}" required autocomplete="redshift_result" autofocus>
                                 </div>
-                                 <div class="input-group">
-                                    <label class="label text-md-right">User</label>
-                                    <input id="user_ID" type="text" class="input--style-4" name="user_ID" value="{{ old('user_ID') }}" required autocomplete="user_ID" autofocus>
-                                </div>
+                                 
                             </div>
                             </div>
 

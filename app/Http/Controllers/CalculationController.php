@@ -91,11 +91,11 @@ class CalculationController extends Controller
 
         //$calculated->save();
 
-        // return redirect('/calculation');
+       /*  // return redirect('/calculation'); */
 
 
          $calculated = new redshift_table();
-		$calculated->assigned_calc_ID = $request->input('assigned_calc_ID');
+		$calculated->assigned_calc_ID = $request('assigned_calc_ID');
     	$calculated->optical_u = $request->input('optical_u');
     	$calculated->optical_g = $request->input('optical_g');
     	$calculated->optical_r = $request->input('optical_r');
@@ -110,20 +110,20 @@ class CalculationController extends Controller
         $calculated->radio_one_four = $request->input('radio_one_four');
     	$calculated->user_ID = 2;
     	// optical g + optical u
-    	$str =  $calculated->optical_u . " " . $calculated->optical_g . " " . $calculated->optical_r  . " " . $calculated->optical_i . " " . $calculated->optical_z .  " " . $calculated->infrared_three_six . " " . $calculated->infrared_four_five . " " . $calculated->infrared_five_eight . " " . $calculated->infrared_eight_zero . " " . $calculated->infrared_J . " " . $calculated->infrared_K  . " " .  $calculated->radio_one_four;
-   		$str = escapeshellcmd($str);
-    	$process = new Process('python testWebPy.py ' . $str);
-    	try {
-  			  $process->mustRun();
-   			  $calculated->redshift_result = $process->getOutput();
-		} catch (ProcessFailedException $exception) {
-   			echo $exception->getMessage();
-        	$calculated->redshift_result = -1;
-        }
+    	// $str =  $calculated->optical_u . " " . $calculated->optical_g . " " . $calculated->optical_r  . " " . $calculated->optical_i . " " . $calculated->optical_z .  " " . $calculated->infrared_three_six . " " . $calculated->infrared_four_five . " " . $calculated->infrared_five_eight . " " . $calculated->infrared_eight_zero . " " . $calculated->infrared_J . " " . $calculated->infrared_K  . " " .  $calculated->radio_one_four;
+   		// $str = escapeshellcmd($str);
+    	// $process = new Process('python testWebPy.py ' . $str);
+    	// try {
+  		// 	  $process->mustRun();
+   		// 	  $calculated->redshift_result = $process->getOutput();
+		// } catch (ProcessFailedException $exception) {
+   		// 	echo $exception->getMessage();
+        // 	$calculated->redshift_result = -1;
+        // }
        
         $calculated->save();
       
-        // return redirect('/calculation')->with(['result', $calculated]);
-        return view('/calculation');
+        //return redirect('/calculation')->with(['result', $calculated]);
+        return redirect('/calculation');
     }
 }
