@@ -29,7 +29,7 @@
 						<span class="label-input100">Password</span>
 						<input id="password" type="password" class="input100 form-control @error('password') is-invalid @enderror" type="password" name="password" placeholder="Type your password" required autocomplete="current-password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
-						@error('password')
+						@error('pass')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

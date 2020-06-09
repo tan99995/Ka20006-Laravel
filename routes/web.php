@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     return view('history');
 // })->name('history');
 Route::get('/calculation', 'CalculationController@index')->name('calculation');
+
 Route::get('/history', 'CalculationController@home')->name('history');
 
 
