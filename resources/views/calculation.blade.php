@@ -1,6 +1,7 @@
 @extends('layouts.app_boot')
 @section('title', 'Calculation Page' )
 @section('content')
+
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
@@ -116,7 +117,7 @@
                             <div class="col-4">
                                 <div class="input-group">
                                     <label class="label text-md-right">Infrared 5.8</label>
-                                    <input id="infrared_four_eight" type="text" class="input--style-4" name="infrared_four_eight" value="{{ old('infrared_four_eight') }}" required autocomplete="infrared_four_eight" autofocus>
+                                    <input id="infrared_five_eight" type="text" class="input--style-4" name="infrared_five_eight" value="{{ old('infrared_five_eight') }}" required autocomplete="infrared_five_eight" autofocus>
                                 </div>
                             </div>
                              <div class="col-4">
@@ -151,8 +152,14 @@
                       
                         
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Calculate</button>
+                            <button class="btn btn--radius-2 btn--blue" type="submit" name="submit">Calculate</button>
                         </div>
+                        <p>
+                        <div>
+                        <div>
+                        </div>
+
+                
 
                     </form>
                 </div>
